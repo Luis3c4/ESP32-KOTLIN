@@ -1,4 +1,4 @@
-package com.example.probando
+package com.example.proyectoESP32
 
 import org.junit.Test
 

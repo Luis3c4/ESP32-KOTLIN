@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.probando"
-    compileSdk = 35
+    namespace = "com.example.proyectoESP32"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.probando"
+        applicationId = "com.example.proyectoESP32"
         minSdk = 31
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

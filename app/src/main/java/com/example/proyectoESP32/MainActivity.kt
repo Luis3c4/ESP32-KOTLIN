@@ -1,8 +1,7 @@
-package com.example.probando
+package com.example.proyectoESP32
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -12,7 +11,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -62,8 +60,7 @@ fun ESP32ControlApp() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .border(2.dp, Color.Black, RoundedCornerShape(16.dp))
-                .padding(8.dp)
+                .padding(10.dp)
         ) {
             Column(
                 modifier = Modifier.fillMaxSize()
@@ -85,12 +82,12 @@ fun Header() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(vertical = 16.dp),
         contentAlignment = Alignment.Center
     ) {
         Text(
             text = "ESP32 Control",
-            fontSize = 20.sp,
+            fontSize = 32.sp,
             fontWeight = FontWeight.Bold
         )
     }
@@ -107,25 +104,20 @@ fun MainContent() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(1.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
     ) {
         // Voice control button
-        OutlinedButton(
-            onClick = { /* TODO: Implement voice control */ },
+        Box(
             modifier = Modifier
-                .fillMaxWidth(0.6f)
-                .height(40.dp),
-            shape = RoundedCornerShape(20.dp),
-            border = ButtonDefaults.outlinedButtonBorder.copy(width = 1.dp),
-            colors = ButtonDefaults.outlinedButtonColors(
-                contentColor = Color.Black
-            )
+                .fillMaxWidth(0.8f)
+                .height(60.dp),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = "CONTROL POR VOZ",
-                fontSize = 14.sp,
+                fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
         }
@@ -133,7 +125,7 @@ fun MainContent() {
         // Microphone icon
         Box(
             modifier = Modifier
-                .size(100.dp)
+                .size(120.dp)
                 .border(2.dp, Color.Black, CircleShape)
                 .padding(16.dp),
             contentAlignment = Alignment.Center
@@ -141,7 +133,7 @@ fun MainContent() {
             Icon(
                 painter = painterResource(id = R.drawable.ic_mic),
                 contentDescription = "Microphone",
-                modifier = Modifier.size(48.dp),
+                modifier = Modifier.size(68.dp),
                 tint = Color.Black
             )
         }
@@ -154,8 +146,8 @@ fun MainContent() {
             OutlinedButton(
                 onClick = { /* TODO: Turn ON */ },
                 modifier = Modifier
-                    .width(100.dp)
-                    .height(40.dp),
+                    .width(180.dp)
+                    .height(100.dp),
                 shape = RoundedCornerShape(8.dp),
                 border = ButtonDefaults.outlinedButtonBorder.copy(width = 1.dp),
                 colors = ButtonDefaults.outlinedButtonColors(
@@ -164,7 +156,7 @@ fun MainContent() {
             ) {
                 Text(
                     text = "ON",
-                    fontSize = 16.sp,
+                    fontSize = 32.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -172,8 +164,8 @@ fun MainContent() {
             OutlinedButton(
                 onClick = { /* TODO: Turn OFF */ },
                 modifier = Modifier
-                    .width(100.dp)
-                    .height(40.dp),
+                    .width(180.dp)
+                    .height(100.dp),
                 shape = RoundedCornerShape(8.dp),
                 border = ButtonDefaults.outlinedButtonBorder.copy(width = 1.dp),
                 colors = ButtonDefaults.outlinedButtonColors(
@@ -182,7 +174,7 @@ fun MainContent() {
             ) {
                 Text(
                     text = "OFF",
-                    fontSize = 16.sp,
+                    fontSize = 32.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -216,7 +208,8 @@ fun MainContent() {
             ControlButton(
                 icon = R.drawable.ic_light,
                 label = "LUZ",
-                onClick = { /* TODO: Control light */ }
+                onClick = { /* TODO: Contr
+                ol light */ }
             )
         }
     }
@@ -230,7 +223,7 @@ fun ControlButton(icon: Int, label: String, onClick: () -> Unit) {
     ) {
         OutlinedButton(
             onClick = onClick,
-            modifier = Modifier.size(60.dp),
+            modifier = Modifier.size(80.dp),
             shape = RoundedCornerShape(8.dp),
             border = ButtonDefaults.outlinedButtonBorder.copy(width = 1.dp),
             contentPadding = PaddingValues(8.dp),
@@ -241,15 +234,15 @@ fun ControlButton(icon: Int, label: String, onClick: () -> Unit) {
             Icon(
                 painter = painterResource(id = icon),
                 contentDescription = label,
-                modifier = Modifier.size(32.dp)
+                modifier = Modifier.size(48.dp)
             )
         }
 
-        Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(8.dp))
 
         Text(
             text = label,
-            fontSize = 10.sp,
+            fontSize = 12.sp,
             textAlign = TextAlign.Center
         )
     }

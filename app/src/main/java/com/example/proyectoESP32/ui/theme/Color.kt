@@ -1,4 +1,4 @@
-package com.example.probando.ui.theme
+package com.example.proyectoESP32.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

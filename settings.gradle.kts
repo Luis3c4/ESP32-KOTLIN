@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "probando"
+rootProject.name = "proyectoESP32"
 include(":app")
