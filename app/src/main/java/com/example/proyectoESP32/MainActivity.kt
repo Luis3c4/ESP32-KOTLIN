@@ -56,7 +56,7 @@ fun ESP32ControlApp() {
             .fillMaxSize()
             .background(Color.White)
     ) {
-        // Smartphone frame
+        // pantalla celular
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -66,10 +66,10 @@ fun ESP32ControlApp() {
                 modifier = Modifier.fillMaxSize()
             ) {
 
-                // Header
+                // cabecera
                 Header()
 
-                // Main content
+                // contenido principal
                 MainContent()
             }
         }
@@ -108,7 +108,7 @@ fun MainContent() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
     ) {
-        // Voice control button
+        // boton control por voz
         Box(
             modifier = Modifier
                 .fillMaxWidth(0.8f)
@@ -122,7 +122,7 @@ fun MainContent() {
             )
         }
 
-        // Microphone icon
+        // icono mic
         Box(
             modifier = Modifier
                 .size(120.dp)
@@ -138,7 +138,7 @@ fun MainContent() {
             )
         }
 
-        // ON/OFF buttons
+        // ON/OFF butones
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
@@ -185,26 +185,26 @@ fun MainContent() {
             modifier = Modifier.fillMaxWidth()
         )
 
-        // Control buttons
+        // boton control
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            // Fan button
+            // Fan boton
             ControlButton(
                 icon = R.drawable.ic_fan,
                 label = "VENTILADOR",
                 onClick = { /* TODO: Control fan */ }
             )
 
-            // Lock button
+            // Lock boton
             ControlButton(
                 icon = R.drawable.ic_lock,
                 label = "CERRADURA",
                 onClick = { /* TODO: Control lock */ }
             )
 
-            // Light button
+            // Light boton
             ControlButton(
                 icon = R.drawable.ic_light,
                 label = "LUZ",
